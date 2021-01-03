@@ -1,40 +1,40 @@
-// #include <iostream>
-// #include <vector>
+#include <iostream>
+#include <vector>
 
-// using namespace std;
+using namespace std;
 
-// template <typename T> void printVector(const vector<T> &v){
-//     for(size_t i = 0; i < v.size(); i++){
-//         cout << v[i] << " ";
-//     }
-//     cout << "\n\n";
-// }
+template <typename T> void printVector(const vector<T> &v){
+    for(size_t i = 0; i < v.size(); i++){
+        cout << v[i] << " ";
+    }
+    cout << "\n\n";
+}
 
-// template <typename T> void selectionSort(vector<T> &v){
-//     int j = -1;
-//     for(size_t i = 1; i < v.size(); ++i){
+template <typename T> void selectionSort(vector<T> &v){
+    size_t minIndex;
+    for(size_t i = 0; i < v.size() - 1; i++){
+        minIndex = i;
+        for(size_t j = i + 1; j < v.size(); j++){
+            if(v[j] < v[minIndex]){
+                minIndex = j;
+            }
+        }
+        swap(v[i], v[minIndex]);
+    }
+}
 
-//         j = i;
+template <typename T> void sortVector(vector<T> &v){
+    cout << "Original Vector:\n";
+    printVector(v); 
+    selectionSort(v);
+    cout << "Sorted Vector\n"; 
+    printVector(v);  
+    cout << "\n\n";
+}
 
-//         while(j >= 0 && v[j - 1] > v[j]){
-//             swap(v[j], v[j-1]);
-//             --j;
-//         }
-//     }
-// }
-
-// template <typename T> void sortVector(vector<T> &v){
-//     cout << "Original Vector:\n";
-//     printVector(v); 
-//     insertionSort(v);
-//     cout << "Sorted Vector\n"; 
-//     printVector(v);  
-//     cout << "\n\n";
-// }
-
-// int main(){
-//     vector<int> v = {1, 5, 2, 4, 3};
-//     vector<char> s = {'a', 'z', 'b', 'y', 'c'};
-//     sortVector(v);
-//     sortVector(s);
-// }
+int main(){
+    vector<int> v = {1, 5, 2, 4, 3};
+    vector<char> s = {'a', 'z', 'b', 'y', 'c'};
+    sortVector(v);
+    sortVector(s);
+}

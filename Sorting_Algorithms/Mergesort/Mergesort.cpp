@@ -5,7 +5,7 @@ using namespace std;
 
 /*
 Mergesort - Divide and Conquer algorithm. The worst case of merge sort is nlogn. This will happen when the merge sort
-will have to do the maximum number of comparisons
+will have to do the maximum number of comparisons. Mergesort is a stable sort
 
 Top Down Implementation - Divides the input container into two halves
 calls itself on each of the halves until there are < 2 items

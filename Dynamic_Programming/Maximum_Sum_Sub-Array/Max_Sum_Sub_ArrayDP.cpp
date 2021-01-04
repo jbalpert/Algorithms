@@ -5,7 +5,9 @@
 
 using namespace std;
 
-pair<pair<vector<int>::iterator, vector<int>::iterator>, int> Max_Sum_SubarrayBF2(vector<int> &v){
+// This is O(n) time O(1) Space
+
+pair<pair<vector<int>::iterator, vector<int>::iterator>, int> Max_Sum_SubarrayDP(vector<int> &v){
     int maxSum = v[0], sum = v[0], start = 0, end = 0;
     for(size_t i = 1; i < v.size(); i++){
         sum = max(v[i], sum + v[i]);
@@ -34,7 +36,7 @@ pair<int,int> getIndexRange(pair<vector<int>::iterator, vector<int>::iterator> i
 
 int main(){
    vector<int>j =  {-2, -3, 4, -1, 1, 3, 4, -6, -5, 2, 6, -2, 1, 5, -3}; 
-   auto max_sum = Max_Sum_SubarrayBF2(j); 
+   auto max_sum = Max_Sum_SubarrayDP(j); 
    cout << "Maximum contiguous sum is " << max_sum.second << "\n"; 
    printElements(max_sum.first);
    auto pairIndex = getIndexRange(max_sum.first, j);

@@ -48,7 +48,7 @@ template <typename T> void merge(vector<T> &v, size_t l, size_t m, size_t r){
 }
 
 template <typename T> void mergeSortTD(vector<T> &v, size_t l, size_t r){
-    if(r < l + 2){
+    if(r < l + 2){ // base case: < 2 items
         return;
     }
         size_t m = l + (r - l) /2;
